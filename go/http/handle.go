@@ -11,7 +11,6 @@ import (
 func Handle(ctx context.Context, res http.ResponseWriter, req *http.Request) {
 
 	res.Header().Add("Content-Type", "text/plain")
-	res.Header().Add("Content-Length", "3")
 	res.WriteHeader(200)
 
 	_, err := fmt.Fprintf(res, "FUNCTION HTTP TEST\n")
