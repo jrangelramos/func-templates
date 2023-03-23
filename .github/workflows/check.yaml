@@ -12,10 +12,15 @@ jobs:
           GH_REPO_FULL_NAME: ${{ github.event.pull_request.head.repo.full_name }}
           GH_REPO_BRANCH: ${{ github.event.pull_request.head.ref }}
         run: |
-          echo "Fork repository: ${{ github.event.pull_request.head.repo.full_name }}"
-          echo "Branch: ${{ github.event.pull_request.head.ref }}"
-          echo "Pull Request: ${{ github.event.number }}"
+          echo "Fork repository:   ${{ github.event.pull_request.head.repo.full_name }}"
+          echo "Branch:            ${{ github.event.pull_request.head.ref }}"
+          echo "Pull Request:      ${{ github.event.number }}"
           echo "GH_PR_NUMBER:      $GH_PR_NUMBER"
           echo "GH_REPO_FULL_NAME: $GH_REPO_FULL_NAME"
           echo "GH_REPO_BRANCH:    $GH_REPO_BRANCH"
-          
+          echo "GITHUB_SERVER_URL  $GITHUB_SERVER_URL"
+          echo "GITHUB_REPOSITORY  $GITHUB_REPOSITORY"
+          echo "GITHUB_REF         $GITHUB_REF"
+          echo "GITHUB_REF_NAME    $GITHUB_REF_NAME"
+          echo "GITHUB_BASE_REF    $GITHUB_BASE_REF"
+          echo "CI                 $CI"
