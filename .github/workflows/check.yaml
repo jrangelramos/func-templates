@@ -7,7 +7,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print fork repository and branch
+        env:
+          GH_PR_NUMBER: ${{ github.event.number }}
+          GH_REPO_FULL_NAME: ${{ github.event.pull_request.head.repo.full_name }}
+          GH_REPO_BRANCH: ${{ github.event.pull_request.head.ref }}
         run: |
           echo "Fork repository: ${{ github.event.pull_request.head.repo.full_name }}"
           echo "Branch: ${{ github.event.pull_request.head.ref }}"
-
+          echo "Pull Request: ${{ github.event.number }}"
+          echo "GH_PR_NUMBER:      $GH_PR_NUMBER"
+          echo "GH_REPO_FULL_NAME: $GH_REPO_FULL_NAME"
+          echo "GH_REPO_BRANCH:    $GH_REPO_BRANCH"
+          
