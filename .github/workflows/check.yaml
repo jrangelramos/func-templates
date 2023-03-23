@@ -1,0 +1,13 @@
+name: Check PR
+
+on: [pull_request]
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print fork repository and branch
+        run: |
+          echo "Fork repository: ${{ github.event.pull_request.head.repo.full_name }}"
+          echo "Branch: ${{ github.event.pull_request.head.ref }}"
+
